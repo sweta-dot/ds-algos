@@ -4,11 +4,11 @@
 //let word = "resadsdasd%%%!!!!!";
 //console.log(word.replace(/[^\w]/g, ""));   // it remove all special characters and space
 
-console.log(anagram("rail safety", "fairy tales")); // True
+console.log(anagramTS("rail safety", "fairy tales")); // True
 
-function anagram(stringA, stringB) {
-  const aCharMap = buildMap(stringA);
-  const bChatMap = buildMap(stringB);
+function anagramTS(stringA: string, stringB: string): boolean {
+  const aCharMap: any = buildMap(stringA);
+  const bChatMap: any = buildMap(stringB);
   if (Object.keys(aCharMap).length !== Object.keys(bChatMap).length)
     return false;
 
@@ -19,8 +19,8 @@ function anagram(stringA, stringB) {
   return true;
 }
 
-function buildMap(str) {
-  const charMap = {};
+function buildMap(str: string): {} {
+  const charMap: any = {};
   for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
     charMap[char] = charMap[char] + 1 || 1;
   }
